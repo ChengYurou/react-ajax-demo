@@ -1,26 +1,25 @@
 <html>
 <head>
     <script type="text/javascript">
-        function loadXMLDoc()
-        {
+        function loadXMLDoc() {
             var xmlhttp;
-            if (window.XMLHttpRequest)
-            {
-                xmlhttp=new XMLHttpRequest();
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
             }
-            else
-            {
-                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
             }
-            xmlhttp.onreadystatechange=function()
-            {
-                if (xmlhttp.readyState==4 && xmlhttp.status==200)
-                {
-                    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+            console.log(xmlhttp.readyState);
+            xmlhttp.onreadystatechange = function () {
+
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
                 }
             }
-            xmlhttp.open("GET","./ajax/test.txt",true);
+            xmlhttp.open("GET", "./ajax/test.txt", true);
+            console.log(xmlhttp.readyState);
             xmlhttp.send();
+            console.log(xmlhttp.readyState);
         }
     </script>
 </head>
